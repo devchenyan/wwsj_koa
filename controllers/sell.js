@@ -1,14 +1,14 @@
 /**
- * Created by echo on 2017/4/22.
+ * Created by echo on 2017/4/25.
  */
 
-const Buy = require('../models/Buy');
+const Sell = require('../models/Sell');
 
 const User = require('../models/User');
 const Upload = require('../models/Upload');
 
 module.exports = {
-    'GET /buy/:id': async (ctx, next) => {
+    'GET /sell/:id': async (ctx, next) => {
         var
                 id = ctx.params.id,
                 username = '',
@@ -20,13 +20,17 @@ module.exports = {
                 contacts = '',
                 description = '',
 
-                avatar = '',
+                avatar = 0,
                 avatarpath = '',
                 nickname = '',
-                addtime = '';
+                addtime = '',
+
+                price = '',
+                madetime = '',
+                worktime = '';
 
 
-        await Buy.findById(id).then(function(project) {
+        await Sell.findById(id).then(function(project) {
             username = project.getDataValue('username');
             brand = project.getDataValue('brand');
             phone = project.getDataValue('phone');
@@ -35,7 +39,11 @@ module.exports = {
             address = project.getDataValue('address');
             contacts = project.getDataValue('contacts');
             description = project.getDataValue('description');
-            addtime = new Date(project.getDataValue('addtime') * 1000).toLocaleDateString()
+            addtime = new Date(project.getDataValue('addtime') * 1000).toLocaleDateString();
+
+            price = project.getDataValue('price');
+            madetime = project.getDataValue('madetime');
+            worktime = project.getDataValue('worktime');
         });
         await User.findOne({ where: {username: username} }).then(function(project) {
             nickname = project.getDataValue('nickname');
@@ -50,7 +58,7 @@ module.exports = {
             });
         }
 
-        ctx.render('buy.html', {
+        ctx.render('sell.html', {
             brand: brand,
             phone: phone,
             cartype: cartype,
@@ -61,7 +69,10 @@ module.exports = {
             addtime: addtime,
 
             nickname: nickname,
-            avatarpath: avatarpath
+            avatarpath: avatarpath,
+            price: price,
+            madetime: madetime,
+            worktime: worktime
         });
     }
 };
