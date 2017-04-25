@@ -1,0 +1,74 @@
+.my-container {
+    background-color: #fff;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.my-container .my-block {
+    margin: 0 13px;
+    display: flex;
+    flex-direction: column
+}
+
+.my-block .my-user-block {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.my-block .my-user-block .my-avatar {
+    width: 60px;
+    height: 60px;
+    flex: 1;
+}
+
+.my-block .my-user-block .my-user-info {
+    flex: 4;
+}
+
+.my-block .my-user-block .my-user-info .my-nickname {
+    color: #506290;
+    font-size: larger;
+}
+
+.my-block .my-user-block .my-user-info .my-time {
+    color: #afb0b2;
+}
+
+.my-block .my-description {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #505152;
+}
+
+.my-block .my-line {
+    background-color: #f2f4f7;
+    height: 0.5px;
+    width: 100%;
+    flex: 0;
+}
+
+.my-block .my-cell {
+    min-height: 44px;
+    display: flex;
+    flex-direction: row;
+    align-items: center
+}
+
+.my-cell .my-label {
+    color: #afb0b2;
+    flex: 1;
+}
+
+.my-cell .my-text {
+    color: #505152;
+    flex: 3;
+    padding: 10px 0;
+}
+
+.my-cell .my-vertical {
+    color: #f2f4f7;
+    font-size: larger;
+    width: 10px;
+}

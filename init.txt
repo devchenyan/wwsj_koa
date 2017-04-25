@@ -1,0 +1,3 @@
+grant all privileges on wanwan.* to 'www'@'%' identified by 'www';
+
+use wanwan;

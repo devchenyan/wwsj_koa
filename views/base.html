@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="挖挖社交-专为工程机械行业打造的社交软件">
+    {% block title %} {% endblock %}
+
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>-->
+
+    <link rel="stylesheet" href="/static/css/base.css">
+</head>
+
+<!--body默认margin为8-->
+<body style="background-color: #f2f4f7;
+      margin: 0">
+    <header style="height: 60px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            background-color: #fff">
+        <div style="height: 100%;
+                    margin: 0 20px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;">
+            <div style="flex: 0; height: 50px">
+                <img src="/static/img/header.png" height="50px">
+            </div>
+            <div style="flex: 0; height: 34px">
+                <a  href="http://a.app.qq.com/o/simple.jsp?pkgname=com.jmheart.mechanicsbao">
+                    <img src="/static/img/downapp.png" height="34px">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div style="margin-top: 70px;
+                width: 100%;
+                margin-bottom: 100px">
+    {% block main %} {% endblock %}
+    </div>
+
+    <!--<footer style="height: 50px;-->
+                   <!--width: 100%;-->
+                   <!--margin-top: 100px;-->
+                   <!--background-color: #f9cd0b">-->
+        <!--<img src="http://eswjdg.com//Uploads/2017-04-01/58df3bb98b7f4.jpg" style="width: 100%">-->
+    <!--</footer>-->
+</body>
+</html>
