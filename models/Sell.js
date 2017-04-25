@@ -17,5 +17,7 @@ module.exports = db.defineModel('jj_cms_seller', {
 
     price: db.STRING(100),
     madetime: db.STRING(100),
-    worktime: db.STRING(100)
+    worktime: db.STRING(100),
+
+    images: db.STRING(100),
 });

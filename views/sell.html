@@ -35,22 +35,13 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
+                {% for imageUrl in imageUrls %}
                 <div class="swiper-slide">
                     <div class="swiper-zoom-container">
-                        <img src="http://lorempixel.com/800/800/sports/1">
+                        <img src="{{ imageUrl }}">
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="swiper-zoom-container">
-                        <img src="http://lorempixel.com/800/800/sports/2">
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="swiper-zoom-container">
-                        <img src="http://lorempixel.com/800/800/sports/3">
-                    </div>
-                </div>
-                ...
+                {% endfor %}
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>

@@ -27,26 +27,26 @@ module.exports = {
 
 
         await Buy.findById(id).then(function(project) {
-            username = project.getDataValue('username');
-            brand = project.getDataValue('brand');
-            phone = project.getDataValue('phone');
-            cartype = project.getDataValue('cartype');
-            version = project.getDataValue('version');
-            address = project.getDataValue('address');
-            contacts = project.getDataValue('contacts');
-            description = project.getDataValue('description');
-            addtime = new Date(project.getDataValue('addtime') * 1000).toLocaleDateString()
+            username = project.get('username');
+            brand = project.get('brand');
+            phone = project.get('phone');
+            cartype = project.get('cartype');
+            version = project.get('version');
+            address = project.get('address');
+            contacts = project.get('contacts');
+            description = project.get('description');
+            addtime = new Date(project.get('addtime') * 1000).toLocaleDateString()
         });
         await User.findOne({ where: {username: username} }).then(function(project) {
-            nickname = project.getDataValue('nickname');
-            avatar =  project.getDataValue('avatar');
+            nickname = project.get('nickname');
+            avatar =  project.get('avatar');
         });
         if (avatar === 0) {
             // 默认头像
             avatarpath = "http://eswjdg.com/head-p.png";
         } else {
-            await Upload.findById(id).then(function(project) {
-                avatarpath = "http://eswjdg.com/" + project.getDataValue('path');
+            await Upload.findById(avatar).then(function(project) {
+                avatarpath = "http://eswjdg.com/" + project.get('path');
             });
         }
 
