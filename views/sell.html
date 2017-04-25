@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-<title> {{ description }} </title>
+<title> 【卖车信息】{{ description }} </title>
 {% endblock %}
 
 {% block main %}
@@ -13,7 +13,7 @@
         <div class="my-user-block">
             <!--头像-->
             <div class="my-avatar">
-                <img src="{{ avatarpath }}" style="height: 60px; width: 60px; border-radius:60px; "/>
+                <img class="my-avatar-img" src="{{ avatarpath }}"/>
             </div>
             <!--右边-->
             <div class="my-user-info">
@@ -25,10 +25,12 @@
                 </div>
             </div>
         </div>
+
         <!--具体描述-->
         <div class="my-description">
             {{ description }}
         </div>
+
         <!--图片-->
         <!-- Slider main container -->
         <div class="swiper-container" style="margin-bottom: 15px">
@@ -46,7 +48,7 @@
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
         </div>
-        <!--</footer>-->
+
         <script>
             var mySwiper = new Swiper ('.swiper-container', {
                 // Optional parameters

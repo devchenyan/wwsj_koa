@@ -23,6 +23,12 @@
     flex: 1;
 }
 
+.my-block .my-user-block .my-avatar .my-avatar-img {
+    height: 60px;
+    width: 60px;
+    border-radius:60px;
+}
+
 .my-block .my-user-block .my-user-info {
     flex: 4;
 }
