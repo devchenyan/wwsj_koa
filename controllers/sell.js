@@ -12,40 +12,46 @@ module.exports = {
         var
                 id = ctx.params.id,
                 username = '',
+
                 brand = '',
-                phone = '',
                 cartype = '',
                 version ='',
-                address = '',
-                contacts = '',
-                description = '',
-
-                avatar = 0,
-                avatarpath = '',
-                nickname = '',
-                addtime = '',
 
                 price = '',
                 madetime = '',
                 worktime = '',
+
+                contacts = '',
+                phone = '',
+                address = '',
+
+                description = '',
+                addtime = '',
+
+                avatar = '',
+                avatarpath = '',
+                nickname = '',
 
                 images = [],
                 imageUrls = [];
 
         await Sell.findById(id).then(function(project) {
             username = project.get('username');
+
             brand = project.get('brand');
-            phone = project.get('phone');
             cartype = project.get('cartype');
             version = project.get('version');
-            address = project.get('address');
-            contacts = project.get('contacts');
-            description = project.get('description');
-            addtime = new Date(project.get('addtime') * 1000).toLocaleDateString();
 
             price = project.get('price');
             madetime = project.get('madetime');
             worktime = project.get('worktime');
+
+            contacts = project.get('contacts');
+            phone = project.get('phone');
+            address = project.get('address');
+
+            description = project.get('description');
+            addtime = new Date(project.get('addtime') * 1000).toLocaleDateString();
 
             images = project.get('images').split(",");
         });
@@ -76,19 +82,22 @@ module.exports = {
 
         ctx.render('sell.html', {
             brand: brand,
-            phone: phone,
             cartype: cartype,
             version: version,
-            address: address,
+
+            price: price,
+            madetime: madetime,
+            worktime: worktime,
+
             contacts: contacts,
+            phone: phone,
+            address: address,
+
             description: description,
             addtime: addtime,
 
             nickname: nickname,
             avatarpath: avatarpath,
-            price: price,
-            madetime: madetime,
-            worktime: worktime,
 
             imageUrls: imageUrls
         });

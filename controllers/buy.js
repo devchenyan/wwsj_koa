@@ -12,28 +12,34 @@ module.exports = {
         var
                 id = ctx.params.id,
                 username = '',
+
                 brand = '',
-                phone = '',
-                cartype = '',
                 version ='',
-                address = '',
+                cartype = '',
+
                 contacts = '',
+                phone = '',
+                address = '',
+
                 description = '',
+                addtime = '',
 
                 avatar = '',
                 avatarpath = '',
-                nickname = '',
-                addtime = '';
+                nickname = '';
 
 
         await Buy.findById(id).then(function(project) {
             username = project.get('username');
+
             brand = project.get('brand');
-            phone = project.get('phone');
-            cartype = project.get('cartype');
             version = project.get('version');
-            address = project.get('address');
+            cartype = project.get('cartype');
+
             contacts = project.get('contacts');
+            phone = project.get('phone');
+            address = project.get('address');
+
             description = project.get('description');
             addtime = new Date(project.get('addtime') * 1000).toLocaleDateString()
         });
@@ -52,11 +58,13 @@ module.exports = {
 
         ctx.render('buy.html', {
             brand: brand,
-            phone: phone,
             cartype: cartype,
             version: version,
-            address: address,
+
             contacts: contacts,
+            phone: phone,
+            address: address,
+
             description: description,
             addtime: addtime,
 

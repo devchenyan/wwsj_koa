@@ -17,6 +17,7 @@
     align-items: center;
 }
 
+/* 用户头像 */
 .my-block .my-user-block .my-avatar {
     width: 60px;
     height: 60px;
@@ -38,6 +39,7 @@
     font-size: larger;
 }
 
+/* 发布时间 */
 .my-block .my-user-block .my-user-info .my-time {
     color: #afb0b2;
 }
@@ -79,7 +81,9 @@
     width: 10px;
 }
 
-/* 发布的轮播图 */
+/*-------------------------------------*/
+
+/* 卖车、出租中的照片轮播 */
 .swiper-container {
     max-width: 100%;
     height: 220px;
